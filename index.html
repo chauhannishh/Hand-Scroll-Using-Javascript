@@ -22,6 +22,7 @@
 		
 		<script>
 		s = 1;
+		var curr_zoom = 100;
 		while(s!=500){
 			s++;
 			var node = document.createElement("p");                 // Create a <li> node
@@ -45,10 +46,12 @@ document.getElementById("aa").appendChild(node);
 				}
 
 				if(gesture.left){
-					document.body.style.zoom = "80%";
+					curr_zoom -= 10;
+					document.body.style.zoom = curr_zoom  + "%";
 				}
 				if(gesture.right){
-					document.body.style.zoom = "120%";
+					curr_zoom += 10;
+					document.body.style.zoom = curr_zoom + "%";
 				}
 
 			});
