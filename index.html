@@ -1,0 +1,57 @@
+<!DOCTYPE>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Development Environment</title>
+
+		<meta name = "description" content = "gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive">
+		<meta name = "author" content = "Hadi Michael (http://hadi.io)">
+
+		<!-- include js -->
+		<script src="./src/gest.js"></script>
+	</head>
+
+	<body>
+			<ul id="aa">
+
+
+
+			</ul>
+		<!-- run gest.js to help me dev -->
+		
+		<script>
+		s = 1;
+		while(s!=500){
+			s++;
+			var node = document.createElement("p");                 // Create a <li> node
+var textnode = document.createTextNode("Lorem Ipsum is unadulterated drivel. It means nothing whatsoever, but it's surprisingly useful. The main idea behind lorem ipsum is to have 'convincing' text, separated into words, paragraphs and with punctuation etc. This 'text' is then used by DTP bureaux and web designers for roughing out document designs, illustrating text flow and run arounds before the final text arrives. It allows designers to show their proposals without having clients distracted by meaningful text. It also avoids fine publications like N.T.K. detecting irony which may become apparent in old web page drafts loitering around dusty servers which had English-language garbage text used as filler. A FOLDOC definition of lorem ipsum is here.");         // Create a text node
+node.appendChild(textnode);                              // Append the text to <li>
+document.getElementById("aa").appendChild(node);
+		}
+		</script>
+		
+		<script type="text/javascript">
+			gest.start();
+			// gest.options.debug(true);
+
+			gest.options.subscribeWithCallback(function(gesture) {
+				if(gesture.up){
+					window.scrollBy(0,-5000);
+				}
+
+				if(gesture.down){
+					window.scrollBy(0,5000);
+				}
+
+				if(gesture.left){
+					document.body.style.zoom = "80%";
+				}
+				if(gesture.right){
+					document.body.style.zoom = "120%";
+				}
+
+			});
+		</script>
+	</body>
+</html>

@@ -1,33 +1,3 @@
-/* 
- * @name: gest.js
- * @description: gest.js is a webcam based gesture recognition library that helps developers make webpages more immersive
- * @version: 0.5.0
- * @author: Hadi Michael (http://hadi.io)
- * @acknowledgements: gest.js is an extension of work started by William Wu (https://github.com/wvvvw)
- * @license: MIT License
-	The MIT License (MIT)
-
-	Copyright (c) 2013-2014 Hadi Michael (http://hadi.io)
-
-	Permission is hereby granted, free of charge, to any person obtaining a copy
-	of this software and associated documentation files (the "Software"), to deal
-	in the Software without restriction, including without limitation the rights
-	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-	copies of the Software, and to permit persons to whom the Software is
-	furnished to do so, subject to the following conditions:
-
-	The above copyright notice and this permission notice shall be included in
-	all copies or substantial portions of the Software.
-
-	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-	THE SOFTWARE.
-*/
-
 window.gest = (function (window) {
 	"use strict";
 
@@ -96,7 +66,7 @@ window.gest = (function (window) {
 		return true;
 	},
 
-	/* @private */
+	 
 	dispatchGestEvent = function(_gestEvent) {
 		//console.log(_gestEvent);
 		var eventObj = utils.createCustomEvent('gest', document);
@@ -113,7 +83,7 @@ window.gest = (function (window) {
 		utils.fireEvent(eventObj);
 	},
 
-	/* @private */
+	 
 	init = function () {
 		//create required DOM elements
 		video = document.createElement('video');
@@ -138,7 +108,7 @@ window.gest = (function (window) {
 		return true;
 	},
 
-	/* @private */
+	 
 	throwError = function(_code, _obj) {
 		// setup up error codes
 		var _error;
@@ -182,7 +152,7 @@ window.gest = (function (window) {
 		dispatchGestEvent( {error: _error} );
 	},
 
-	/* @private */
+	 
 	grabVideoFrame = function (width, height) {
 		//grab a frame from the video and compress it to the width/height specified - we do this by drawing it onto a temporary canvas
 		try {
@@ -207,7 +177,7 @@ window.gest = (function (window) {
 		}
 	},
 
-	/* @private */
+	 
 	/* skin filtering using HUE (colour) SATURATION (dominance of the colour) VALUE (brightness of the colour) 
 	 * this algorithms reliability is heavily dependant on lighting conditions - see this journal article http://wwwsst.ums.edu.my/data/file/Su7YcHiV9AK5.pdf
 	 */
@@ -295,7 +265,7 @@ window.gest = (function (window) {
 		}
 	},
 
-	/* @private */
+	 
 	differenceMap = {
 		priorFrame: false,
 
@@ -351,7 +321,7 @@ window.gest = (function (window) {
 		}
 	},
 
-	/* @private */
+	 
 	lookForGesture = {
 		prior: false,
 		filteringFactor: 0.9,
@@ -445,7 +415,7 @@ window.gest = (function (window) {
 		}
 	},
 
-	/* @private */
+	 
 	utils = {
 		/* Event Handling utility by @hadi_michael - MIT License */
 		htmlEvents: { //list of real events
